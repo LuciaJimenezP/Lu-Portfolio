@@ -827,6 +827,11 @@ body::before {
   background: linear-gradient(45deg, #b47bff, #64ffc8);
 }
 
+.lang-switch button.active-lang {
+  background: linear-gradient(45deg, #7b4fcf, #3fcfa0);
+  color: white;
+}
+
 .lang-switch.show {
   opacity: 1;
   pointer-events: auto;
@@ -1144,4 +1149,62 @@ body::before {
   .skill span {
     font-size: 12px;
   }
+}
+/* 🔝 BOTÓN VOLVER ARRIBA */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  color: #202020;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+  z-index: 500;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: linear-gradient(45deg, #b47bff, #64ffc8);
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+}
+
+/* ♿ ACCESIBILIDAD: estados de foco visibles para navegación con teclado */
+a:focus-visible,
+button:focus-visible,
+.skill:focus-visible,
+.cert-card:focus-visible {
+  outline: 3px solid #7b4fcf;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.nav-link:focus-visible {
+  outline-offset: -2px;
 }

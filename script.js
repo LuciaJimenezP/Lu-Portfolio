@@ -9,8 +9,8 @@ window.addEventListener("orientationchange", setRealVH);
 
 const intro = document.getElementById("intro");
 const content = document.getElementById("content");
-const skills = document.querySelector(".skills-section");
 const navbar = document.getElementById("navbar");
+const backToTop = document.getElementById("backToTop");
 const btnES = document.getElementById("btn-es");
 const btnEN = document.getElementById("btn-en");
 
@@ -39,6 +39,16 @@ window.addEventListener("scroll", () => {
   } else {
     navbar.classList.remove("show");
   }
+
+  if (scrollY > window.innerHeight) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
+  }
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 /* 🌐 IDIOMA */
@@ -49,16 +59,20 @@ function changeLanguage(lang) {
       ? el.getAttribute("data-es")
       : el.getAttribute("data-en");
   });
+  document.documentElement.lang = lang;
   localStorage.setItem("lang", lang);
+
+  btnES.classList.toggle("active-lang", lang === "es");
+  btnEN.classList.toggle("active-lang", lang === "en");
 }
 
 btnES.addEventListener("click", () => changeLanguage("es"));
 btnEN.addEventListener("click", () => changeLanguage("en"));
 
-window.addEventListener("load", () => {
-  const savedLang = localStorage.getItem("lang") || "en";
-  changeLanguage(savedLang);
-});
+/* Detecta idioma guardado, o si es la primera visita, el idioma del navegador */
+const savedLang = localStorage.getItem("lang");
+const browserLang = navigator.language?.startsWith("es") ? "es" : "en";
+changeLanguage(savedLang || browserLang);
 
 /* 🖼️ CARRUSEL de fondo */
 const bgImages = document.querySelectorAll(".background-slider img");
@@ -124,6 +138,12 @@ function showPrevCert() {
 if (certCards.length) {
   certCards.forEach((card, index) => {
     card.addEventListener("click", () => openCertLightbox(index));
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openCertLightbox(index);
+      }
+    });
   });
 
   certClose.addEventListener("click", closeCertLightbox);
