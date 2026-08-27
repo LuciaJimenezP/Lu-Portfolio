@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lucia Jimenez — Estudiante de Ingeniería de Sistemas. Portafolio de proyectos, habilidades y contacto (SQL, Power BI, UX/UI, C#).">
+  <title>Lucia Jimenez | Portfolio</title>
+
+  <!-- ICONOS -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- TELÓN -->
+<section class="intro" id="intro">
+  <div class="intro-inner">
+    <img src="img/lucia.png" class="intro-img" alt="Lucia Jimenez">
+    <div class="ticker">
+      <div class="ticker-track">
+        <span data-es="✿ Lucia Jimenez ✿ Ingeniería de Sistemas ✿ SQL ✿ Power BI ✿ UX/UI ✿ C#" data-en="✿ Lucia Jimenez ✿ Systems Engineering ✿ SQL ✿ Power BI ✿ UX/UI ✿ C#">✿ Lucia Jimenez ✿ Systems Engineering ✿ SQL ✿ Power BI ✿ UX/UI ✿ C#</span>
+        <span data-es="✿ Lucia Jimenez ✿ Ingeniería de Sistemas ✿ SQL ✿ Power BI ✿ UX/UI ✿ C#" data-en="✿ Lucia Jimenez ✿ Systems Engineering ✿ SQL ✿ Power BI ✿ UX/UI ✿ C#">✿ Lucia Jimenez ✿ Systems Engineering ✿ SQL ✿ Power BI ✿ UX/UI ✿ C#</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="navbar" id="navbar">
+  <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+    <img src="img/ele.png" class="nav-logo" alt="Logo">
+  </a>
+
+  <div class="nav-links-wrapper" id="navLinksWrapper">
+    <a href="#about" class="nav-link" data-es="Sobre mí" data-en="About me">About me</a>
+    <a href="#projects" class="nav-link" data-es="Proyectos" data-en="Projects">Projects</a>
+    <a href="#skills" class="nav-link" data-es="Habilidades" data-en="Skills">Skills</a>
+    <a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contact</a>
+
+    <div class="nav-divider"></div>
+
+    <div class="lang-switch" id="langSwitch">
+      <button id="btn-en">EN</button>
+      <button id="btn-es">ES</button>
+    </div>
+  </div>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+</nav>
+
+<!-- CONTENIDO -->
+<div class="content" id="content">
+  <!-- ABOUT ME -->
+  <section class="about-section" id="about">
+
+    <div class="about-container">
+
+      <div class="about-scene">
+        <h1 data-es="Sobre mí" data-en="About me">About me</h1>
+    <!-- FONDO EN MOVIMIENTO -->
+        <div class="background-slider">
+          <img src="img/france.png" alt="Francia">
+          <img src="img/italy.jpg" alt="Italia">
+          <img src="img/office.jpeg" alt="Oficina">
+          <img src="img/japan.jpeg" alt="Japón">
+          <img src="img/peru.png" alt="Perú">
+          <img src="img/upc.png" alt="UPC">
+          <img src="img/setup.jpg" alt="Setup de trabajo">
+        </div>
+
+    <!-- PERSONAJE + BURBUJA -->
+        <div class="about-foreground">
+          <img src="img/me.png" class="about-img" alt="Ilustración de Lucia">
+
+          <div class="speech-bubble" 
+            data-es="Soy estudiante de Ingeniería de Sistemas enfocada en la optimización de procesos, análisis de datos y soluciones centradas en el usuario. Disfruto construyendo experiencias digitales que combinan funcionalidad, diseño y eficiencia."
+            data-en="I'm a Systems Engineering student focused on process optimization, data analysis and user-centered solutions. I enjoy building digital experiences that combine functionality, design and efficiency.">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects-section" id="projects">
+      <h1 class="title" data-es="Mis Proyectos" data-en="My Table">My Table</h1>
+
+      <div class="carousel" id="carousel">
+        <a href="https://aura-health-frontend.vercel.app/" target="_blank" class="item">
+          <img src="img/aurahealth.png" alt="Proyecto AuraHealth">
+          <h2>AuraHealth</h2>
+        </a>
+
+        <a href="https://github.com/LuciaJimenezP/Deliche" target="_blank" class="item">
+          <img src="img/deliche.png" alt="Proyecto Deliche">
+          <h2>Deliche</h2>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1tZCoYk0Hvwx08zqX3bRuWe6q3SAOb0Sk/view?usp=sharing" target="_blank" class="item">
+          <img src="img/cv.png" alt="Currículum de Lucia Jimenez">
+          <h2 data-es="Perfil" data-en="Resume">Resume</h2>
+        </a>
+      </div>
+    </section>
+
+  <!-- SKILLS -->
+  <section class="skills-section" id="skills">
+  <div class="skills-box">
+    <h1 data-es="Habilidades" data-en="Skills">Skills</h1>
+
+    <div class="skills-container">
+
+      <div class="skill html">
+        <i class="fa-brands fa-html5"></i>
+        <span>HTML</span>
+      </div>
+
+      <div class="skill css">
+        <i class="fa-brands fa-css3-alt"></i>
+        <span>CSS</span>
+      </div>
+
+      <div class="skill js">
+        <i class="fa-brands fa-js"></i>
+        <span>JavaScript</span>
+      </div>
+
+      <div class="skill figma">
+        <i class="fa-brands fa-figma"></i>
+        <span>Figma</span>
+      </div>
+
+      <div class="skill git">
+        <i class="fa-brands fa-git-alt"></i>
+        <span>Git</span>
+      </div>
+
+      <div class="skill sql">
+        <i class="fa-solid fa-database"></i>
+        <span>SQL</span>
+      </div>
+
+      <div class="skill csharp">
+        <i class="fa-solid fa-code"></i>
+        <span>C#</span>
+      </div>
+
+      <div class="skill postgresql">
+        <i class="fa-solid fa-database"></i>
+        <span>PostgreSQL</span>
+      </div>
+
+      <div class="skill powerbi">
+        <i class="fa-solid fa-chart-column"></i>
+        <span>Power BI</span>
+      </div>
+
+      <div class="skill bizagi">
+        <i class="fa-solid fa-diagram-project"></i>
+        <span>Bizagi Modeler</span>
+      </div>
+
+      <div class="skill archimate">
+        <i class="fa-solid fa-sitemap"></i>
+        <span>ArchiMate</span>
+      </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+
+    <h1 class="contact-title" data-es="¡Contáctame!" data-en="Let's work together!">Let's work together!</h1>
+
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=luciajimenezp05@gmail.com" target="_blank" rel="noopener" class="contact-container">
+      <img src="img/mail.png" alt="mail" class="contact-img">
+      <span data-es="Envíame un correo" data-en="Send me an email">Send me an email</span>
+    </a>
+
+  <!-- SOCIALS -->
+    <div class="social-contact">
+
+      <a href="https://github.com/LuciaJimenezP" target="_blank" class="social github">
+        <i class="fa-brands fa-github"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/lu-jim-pi" target="_blank" class="social linkedin">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <h1>Lucia Jimenez</h1>
+    <p>© 2026 Lucia Jimenez. All rights reserved.</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
