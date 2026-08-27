@@ -407,7 +407,32 @@ body::before {
 
 .skills-box h1 {
   font-size: 4rem;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+}
+
+.skills-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 100%;
+  align-items: center;
+}
+
+.skills-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-group h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #7b4fcf;
+  margin: 0 0 18px 0;
 }
 
 .skills-container {
@@ -785,6 +810,15 @@ body::before {
   .skills-box h1 {
     font-size: 2.5rem;
     margin-bottom: 30px;
+  }
+
+  .skills-groups {
+    gap: 26px;
+  }
+
+  .skills-group h3 {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
   }
 
   .skills-container {
