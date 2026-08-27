@@ -74,6 +74,74 @@ if (bgImages.length > 0) {
   }, 3000);
 }
 
+/* 🎓 LIGHTBOX DE CERTIFICACIONES */
+const certCards = document.querySelectorAll(".cert-card");
+const certLightbox = document.getElementById("certLightbox");
+const certLightboxMedia = document.getElementById("certLightboxMedia");
+const certLightboxTitle = document.getElementById("certLightboxTitle");
+const certLightboxIssuer = document.getElementById("certLightboxIssuer");
+const certLightboxLink = document.getElementById("certLightboxLink");
+const certClose = document.getElementById("certLightboxClose");
+const certPrev = document.getElementById("certPrev");
+const certNext = document.getElementById("certNext");
+
+let currentCertIndex = 0;
+
+function renderCert(index) {
+  const card = certCards[index];
+  const image = card.getAttribute("data-image");
+  const icon = card.getAttribute("data-icon");
+
+  certLightboxMedia.innerHTML = image
+    ? `<img src="${image}" alt="${card.getAttribute("data-title")}">`
+    : `<div class="cert-lightbox-icon"><i class="${icon}"></i></div>`;
+
+  certLightboxTitle.textContent = card.getAttribute("data-title");
+  certLightboxIssuer.textContent = card.getAttribute("data-issuer");
+  certLightboxLink.href = card.getAttribute("data-link");
+}
+
+function openCertLightbox(index) {
+  currentCertIndex = index;
+  renderCert(currentCertIndex);
+  certLightbox.classList.add("open");
+}
+
+function closeCertLightbox() {
+  certLightbox.classList.remove("open");
+}
+
+function showNextCert() {
+  currentCertIndex = (currentCertIndex + 1) % certCards.length;
+  renderCert(currentCertIndex);
+}
+
+function showPrevCert() {
+  currentCertIndex = (currentCertIndex - 1 + certCards.length) % certCards.length;
+  renderCert(currentCertIndex);
+}
+
+if (certCards.length) {
+  certCards.forEach((card, index) => {
+    card.addEventListener("click", () => openCertLightbox(index));
+  });
+
+  certClose.addEventListener("click", closeCertLightbox);
+  certNext.addEventListener("click", showNextCert);
+  certPrev.addEventListener("click", showPrevCert);
+
+  certLightbox.addEventListener("click", (e) => {
+    if (e.target === certLightbox) closeCertLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!certLightbox.classList.contains("open")) return;
+    if (e.key === "Escape") closeCertLightbox();
+    if (e.key === "ArrowRight") showNextCert();
+    if (e.key === "ArrowLeft") showPrevCert();
+  });
+}
+
 /* 🍔 MENÚ HAMBURGUESA (mobile) */
 const navToggle = document.getElementById("navToggle");
 const navLinksWrapper = document.getElementById("navLinksWrapper");
