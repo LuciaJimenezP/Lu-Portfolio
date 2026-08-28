@@ -92,12 +92,125 @@
         <div class="about-foreground">
           <img src="img/me.png" class="about-img" alt="Ilustración de Lucia">
 
-          <div class="speech-bubble" 
-            data-es="Soy estudiante de Ingeniería de Sistemas enfocada en la optimización de procesos, análisis de datos y soluciones centradas en el usuario. Disfruto construyendo experiencias digitales que combinan funcionalidad, diseño y eficiencia."
-            data-en="I'm a Systems Engineering student focused on process optimization, data analysis and user-centered solutions. I enjoy building digital experiences that combine functionality, design and efficiency.">
+          <div class="speech-bubble">
+            <span class="availability-badge">
+              <span class="availability-dot"></span>
+              <span data-es="Abierta a prácticas profesionales" data-en="Open to professional internships">Open to professional internships</span>
+            </span>
+            <span class="speech-bubble-text"
+              data-es="Transformo datos dispersos en decisiones de negocio: SQL, Power BI y modelado de procesos. Estudiante de Ingeniería de Sistemas enfocada en análisis de datos, automatización y soluciones centradas en el usuario."
+              data-en="I turn scattered data into business decisions: SQL, Power BI and process modeling. Systems Engineering student focused on data analysis, automation and user-centered solutions.">
+            </span>
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGROS + IDIOMAS -->
+  <section class="stats-section">
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-number">8</span>
+        <span class="stat-label" data-es="Certificaciones" data-en="Certifications">Certifications</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">3</span>
+        <span class="stat-label" data-es="Proyectos" data-en="Projects">Projects</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-es="Tercio Superior" data-en="Top Third">Top Third</span>
+        <span class="stat-label" data-es="Honores académicos" data-en="Academic honors">Academic honors</span>
+      </div>
+    </div>
+
+    <div class="languages-bar">
+      <div class="language">
+        <span class="language-name" data-es="Español" data-en="Spanish">Spanish</span>
+        <span class="language-level" data-es="Nativo" data-en="Native">Native</span>
+      </div>
+      <div class="language">
+        <span class="language-name" data-es="Inglés" data-en="English">English</span>
+        <span class="language-level">B2+</span>
+      </div>
+      <div class="language">
+        <span class="language-name" data-es="Japonés" data-en="Japanese">Japanese</span>
+        <span class="language-level">A1</span>
+      </div>
+      <div class="language">
+        <span class="language-name" data-es="Francés" data-en="French">French</span>
+        <span class="language-level">A1</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS + IDIOMAS -->
+  <section class="stats-section">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-number">8</span>
+        <span class="stat-label" data-es="Certificaciones" data-en="Certifications">Certifications</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">3</span>
+        <span class="stat-label" data-es="Proyectos" data-en="Projects">Projects</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-es="Tercio Superior" data-en="Top Third">Top Third</span>
+        <span class="stat-label" data-es="Honor académico" data-en="Academic honor">Academic honor</span>
+      </div>
+    </div>
+
+    <div class="languages-bar">
+      <div class="language-item">
+        <span class="lang-name" data-es="Español" data-en="Spanish">Spanish</span>
+        <span class="lang-level" data-es="Nativo" data-en="Native">Native</span>
+      </div>
+      <div class="language-item">
+        <span class="lang-name" data-es="Inglés" data-en="English">English</span>
+        <span class="lang-level">B2+</span>
+      </div>
+      <div class="language-item">
+        <span class="lang-name" data-es="Japonés" data-en="Japanese">Japanese</span>
+        <span class="lang-level">A1</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS & LANGUAGES -->
+  <section class="stats-section">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-number">8</span>
+        <span class="stat-label" data-es="Certificaciones" data-en="Certifications">Certifications</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">3</span>
+        <span class="stat-label" data-es="Proyectos" data-en="Projects">Projects</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-es="Tercio Sup." data-en="Top Third">Top Third</span>
+        <span class="stat-label" data-es="Ranking académico" data-en="Academic ranking">Academic ranking</span>
+      </div>
+    </div>
+
+    <div class="languages-bar">
+      <div class="language-item">
+        <span class="language-name" data-es="Español" data-en="Spanish">Spanish</span>
+        <span class="language-level" data-es="Nativo" data-en="Native">Native</span>
+      </div>
+      <div class="language-item">
+        <span class="language-name" data-es="Inglés" data-en="English">English</span>
+        <span class="language-level">B2+</span>
+      </div>
+      <div class="language-item">
+        <span class="language-name" data-es="Japonés" data-en="Japanese">Japanese</span>
+        <span class="language-level">A1</span>
+      </div>
+      <div class="language-item">
+        <span class="language-name" data-es="Francés" data-en="French">French</span>
+        <span class="language-level">A1</span>
       </div>
     </div>
   </section>
@@ -107,17 +220,35 @@
       <h1 class="title" data-es="Mis Proyectos" data-en="My Table">My Table</h1>
 
       <div class="carousel" id="carousel">
-        <a href="https://aura-health-frontend.vercel.app/" target="_blank" class="item">
+        <div class="item"
+          tabindex="0" role="button"
+          data-image="img/aurahealth.png"
+          data-title="AuraHealth"
+          data-desc-es="Página que permite al usuario crear recordatorios para sus vacunas, citas o tomas de medicamentos."
+          data-desc-en="A page that lets users create reminders for vaccines, appointments, or medication doses."
+          data-bullets-es="Desarrollé utilizando principios de diseño adaptable a dispositivos móviles y de escritorio.|Optimicé la experiencia de usuario mediante estructura clara y navegación intuitiva."
+          data-bullets-en="Built using responsive design principles adaptable to mobile and desktop devices.|Optimized user experience through clear structure and intuitive navigation."
+          data-tools="Figma · Python · HTML · CSS · JS"
+          data-link="https://aura-health-frontend.vercel.app/">
           <img src="img/aurahealth.png" alt="Proyecto AuraHealth" loading="lazy">
           <h2>AuraHealth</h2>
-        </a>
+        </div>
 
-        <a href="https://github.com/LuciaJimenezP/Deliche" target="_blank" class="item">
+        <div class="item"
+          tabindex="0" role="button"
+          data-image="img/deliche.png"
+          data-title="Deliche"
+          data-desc-es="Diseño y modelado de un sistema de gestión para panadería/pastelería, para administrar pedidos, productos y clientes."
+          data-desc-en="Design and modeling of a management system for a bakery/pastry shop, to manage orders, products and customers."
+          data-bullets-es="Implementé automatización de envío de correos electrónicos para confirmación de pedidos, reduciendo procesos manuales.|Diseñé reportes para visualización de ventas, productos con bajo stock y control de entregas."
+          data-bullets-en="Implemented automated order-confirmation emails, reducing manual processes.|Designed reports for sales visualization, low-stock products, and delivery tracking."
+          data-tools="C# (.NET, Windows Forms) · SQL · SMTP en .NET"
+          data-link="https://github.com/LuciaJimenezP/Deliche">
           <img src="img/deliche.png" alt="Proyecto Deliche" loading="lazy">
           <h2>Deliche</h2>
-        </a>
+        </div>
 
-        <a href="https://drive.google.com/file/d/111PDjaedY-wkKN6fyFADl9MIVToEqqlf/view?usp=sharing" target="_blank" class="item">
+        <a href="https://drive.google.com/file/d/111PDjaedY-wkKN6fyFADl9MIVToEqqlf/view?usp=drive_link" target="_blank" class="item">
           <img src="img/cv.png" alt="Currículum de Lucia Jimenez" loading="lazy">
           <h2 data-es="Perfil" data-en="Resume">Resume</h2>
         </a>
@@ -317,27 +448,6 @@
     </div>
   </section>
 
-  <!-- LIGHTBOX DE CERTIFICACIONES -->
-  <div class="cert-lightbox" id="certLightbox">
-    <button class="cert-lightbox-close" id="certLightboxClose" aria-label="Cerrar">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-
-    <button class="cert-lightbox-arrow cert-lightbox-prev" id="certPrev" aria-label="Anterior">
-      <i class="fa-solid fa-chevron-left"></i>
-    </button>
-
-    <div class="cert-lightbox-content">
-      <div class="cert-lightbox-media" id="certLightboxMedia"></div>
-      <h3 id="certLightboxTitle"></h3>
-      <p id="certLightboxIssuer"></p>
-      <a href="#" target="_blank" rel="noopener" class="cert-lightbox-link" id="certLightboxLink" data-es="Ver certificado original" data-en="View original certificate">View original certificate</a>
-    </div>
-
-    <button class="cert-lightbox-arrow cert-lightbox-next" id="certNext" aria-label="Siguiente">
-      <i class="fa-solid fa-chevron-right"></i>
-    </button>
-  </div>
   <section class="contact-section" id="contact">
 
     <h1 class="contact-title" data-es="¡Contáctame!" data-en="Let's work together!">Let's work together!</h1>
@@ -371,6 +481,52 @@
 <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
   <i class="fa-solid fa-arrow-up"></i>
 </button>
+
+<!-- LIGHTBOX DE CERTIFICACIONES -->
+<div class="cert-lightbox" id="certLightbox">
+  <button class="cert-lightbox-close" id="certLightboxClose" aria-label="Cerrar">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+
+  <button class="cert-lightbox-arrow cert-lightbox-prev" id="certPrev" aria-label="Anterior">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+
+  <div class="cert-lightbox-content">
+    <div class="cert-lightbox-media" id="certLightboxMedia"></div>
+    <h3 id="certLightboxTitle"></h3>
+    <p id="certLightboxIssuer"></p>
+    <a href="#" target="_blank" rel="noopener" class="cert-lightbox-link" id="certLightboxLink" data-es="Ver certificado original" data-en="View original certificate">View original certificate</a>
+  </div>
+
+  <button class="cert-lightbox-arrow cert-lightbox-next" id="certNext" aria-label="Siguiente">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+</div>
+
+<!-- LIGHTBOX DE PROYECTOS -->
+<div class="cert-lightbox" id="projectLightbox">
+  <button class="cert-lightbox-close" id="projectLightboxClose" aria-label="Cerrar">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+
+  <button class="cert-lightbox-arrow cert-lightbox-prev" id="projectPrev" aria-label="Anterior">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+
+  <div class="cert-lightbox-content project-lightbox-content">
+    <div class="cert-lightbox-media" id="projectLightboxMedia"></div>
+    <h3 id="projectLightboxTitle"></h3>
+    <p class="project-lightbox-desc" id="projectLightboxDesc"></p>
+    <ul class="project-lightbox-bullets" id="projectLightboxBullets"></ul>
+    <p class="project-lightbox-tools" id="projectLightboxTools"></p>
+    <a href="#" target="_blank" rel="noopener" class="cert-lightbox-link" id="projectLightboxLink" data-es="Ver proyecto" data-en="View project">View project</a>
+  </div>
+
+  <button class="cert-lightbox-arrow cert-lightbox-next" id="projectNext" aria-label="Siguiente">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+</div>
 
 <script src="script.js"></script>
 </body>

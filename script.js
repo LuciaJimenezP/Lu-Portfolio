@@ -64,15 +64,14 @@ function changeLanguage(lang) {
 
   btnES.classList.toggle("active-lang", lang === "es");
   btnEN.classList.toggle("active-lang", lang === "en");
+
+  if (typeof projectLightbox !== "undefined" && projectLightbox.classList.contains("open")) {
+    renderProject(currentProjectIndex);
+  }
 }
 
 btnES.addEventListener("click", () => changeLanguage("es"));
 btnEN.addEventListener("click", () => changeLanguage("en"));
-
-/* Detecta idioma guardado, o si es la primera visita, el idioma del navegador */
-const savedLang = localStorage.getItem("lang");
-const browserLang = navigator.language?.startsWith("es") ? "es" : "en";
-changeLanguage(savedLang || browserLang);
 
 /* 🖼️ CARRUSEL de fondo */
 const bgImages = document.querySelectorAll(".background-slider img");
@@ -86,6 +85,86 @@ if (bgImages.length > 0) {
     currentBg = (currentBg + 1) % bgImages.length;
     bgImages[currentBg].classList.add("active");
   }, 3000);
+}
+
+/* 💼 LIGHTBOX DE PROYECTOS */
+const projectCards = document.querySelectorAll(".item[data-title]");
+const projectLightbox = document.getElementById("projectLightbox");
+const projectLightboxMedia = document.getElementById("projectLightboxMedia");
+const projectLightboxTitle = document.getElementById("projectLightboxTitle");
+const projectLightboxDesc = document.getElementById("projectLightboxDesc");
+const projectLightboxBullets = document.getElementById("projectLightboxBullets");
+const projectLightboxTools = document.getElementById("projectLightboxTools");
+const projectLightboxLink = document.getElementById("projectLightboxLink");
+const projectClose = document.getElementById("projectLightboxClose");
+const projectPrev = document.getElementById("projectPrev");
+const projectNext = document.getElementById("projectNext");
+
+let currentProjectIndex = 0;
+
+function currentLang() {
+  return document.documentElement.lang === "es" ? "es" : "en";
+}
+
+function renderProject(index) {
+  const card = projectCards[index];
+  const lang = currentLang();
+  const image = card.getAttribute("data-image");
+  const bullets = (card.getAttribute(`data-bullets-${lang}`) || "").split("|").filter(Boolean);
+
+  projectLightboxMedia.innerHTML = `<img src="${image}" alt="${card.getAttribute("data-title")}">`;
+  projectLightboxTitle.textContent = card.getAttribute("data-title");
+  projectLightboxDesc.textContent = card.getAttribute(`data-desc-${lang}`);
+  projectLightboxBullets.innerHTML = bullets.map(b => `<li>${b}</li>`).join("");
+  projectLightboxTools.textContent = card.getAttribute("data-tools");
+  projectLightboxLink.href = card.getAttribute("data-link");
+}
+
+function openProjectLightbox(index) {
+  currentProjectIndex = index;
+  renderProject(currentProjectIndex);
+  projectLightbox.classList.add("open");
+}
+
+function closeProjectLightbox() {
+  projectLightbox.classList.remove("open");
+}
+
+function showNextProject() {
+  currentProjectIndex = (currentProjectIndex + 1) % projectCards.length;
+  renderProject(currentProjectIndex);
+}
+
+function showPrevProject() {
+  currentProjectIndex = (currentProjectIndex - 1 + projectCards.length) % projectCards.length;
+  renderProject(currentProjectIndex);
+}
+
+if (projectCards.length) {
+  projectCards.forEach((card, index) => {
+    card.addEventListener("click", () => openProjectLightbox(index));
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openProjectLightbox(index);
+      }
+    });
+  });
+
+  projectClose.addEventListener("click", closeProjectLightbox);
+  projectNext.addEventListener("click", showNextProject);
+  projectPrev.addEventListener("click", showPrevProject);
+
+  projectLightbox.addEventListener("click", (e) => {
+    if (e.target === projectLightbox) closeProjectLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!projectLightbox.classList.contains("open")) return;
+    if (e.key === "Escape") closeProjectLightbox();
+    if (e.key === "ArrowRight") showNextProject();
+    if (e.key === "ArrowLeft") showPrevProject();
+  });
 }
 
 /* 🎓 LIGHTBOX DE CERTIFICACIONES */
@@ -219,3 +298,8 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 sections.forEach(section => observer.observe(section));
+/* Detecta idioma guardado, o si es la primera visita, el idioma del navegador
+   (se ejecuta al final para asegurar que todos los elementos ya existen) */
+const savedLang = localStorage.getItem("lang");
+const browserLang = navigator.language?.startsWith("es") ? "es" : "en";
+changeLanguage(savedLang || browserLang);
