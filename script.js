@@ -110,14 +110,25 @@ function renderProject(index) {
   const card = projectCards[index];
   const lang = currentLang();
   const image = card.getAttribute("data-image");
+  const icon = card.getAttribute("data-icon");
+  const link = card.getAttribute("data-link");
   const bullets = (card.getAttribute(`data-bullets-${lang}`) || "").split("|").filter(Boolean);
 
-  projectLightboxMedia.innerHTML = `<img src="${image}" alt="${card.getAttribute("data-title")}">`;
+  projectLightboxMedia.innerHTML = image
+    ? `<img src="${image}" alt="${card.getAttribute("data-title")}">`
+    : `<div class="cert-lightbox-icon"><i class="${icon}"></i></div>`;
+
   projectLightboxTitle.textContent = card.getAttribute("data-title");
   projectLightboxDesc.textContent = card.getAttribute(`data-desc-${lang}`);
   projectLightboxBullets.innerHTML = bullets.map(b => `<li>${b}</li>`).join("");
   projectLightboxTools.textContent = card.getAttribute("data-tools");
-  projectLightboxLink.href = card.getAttribute("data-link");
+
+  if (link) {
+    projectLightboxLink.href = link;
+    projectLightboxLink.style.display = "inline-block";
+  } else {
+    projectLightboxLink.style.display = "none";
+  }
 }
 
 function openProjectLightbox(index) {
