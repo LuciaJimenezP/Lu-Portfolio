@@ -176,9 +176,9 @@ body::before {
 
 .ticker-track span {
   white-space: nowrap;
-  font-size: 4rem;
+  font-size: clamp(1.3rem, 2.8vw, 2.2rem);
   color: white;
-  padding-right: 80px;
+  padding-right: 60px;
 }
 
 @keyframes scroll {
@@ -1017,10 +1017,6 @@ body::before {
     width: 90%;
   }
 
-  .ticker-track span {
-    font-size: 2rem;
-  }
-
   /* ABOUT */
   .about-section {
     height: auto;
@@ -1549,4 +1545,25 @@ button:focus-visible,
   0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.5); }
   70% { box-shadow: 0 0 0 6px rgba(46, 204, 113, 0); }
   100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}
+
+/* 📄 BOTÓN DESCARGAR CV (en la burbuja de About me) */
+.cv-download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  text-decoration: none;
+  background: #202020;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cv-download-link:hover {
+  background: #7b4fcf;
+  transform: scale(1.04);
 }
